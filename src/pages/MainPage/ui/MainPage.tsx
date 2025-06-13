@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 const MainPage = () => {
   return (
@@ -8,4 +8,4 @@ const MainPage = () => {
   )
 }
 
-export default MainPage
+export default MainPage;
