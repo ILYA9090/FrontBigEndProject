@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb'],
+  extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -12,7 +12,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
     'max-len': 'off',
     'object-curly-newline': 'off',
@@ -29,8 +29,39 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
+    // Правило для запрета литеральных строк
+    'i18next/no-literal-string': [
+      'error', // Уровень ошибки
+      {
+        markupOnly: true, // Проверять только JSX-разметку
+        ignoreAttribute: [
+          // Атрибуты, которые можно оставить без перевода
+          'data-testid', // ID для тестов
+          'aria-label', // Доступность
+          'alt', // Альтернативный текст
+          'role', // Роли ARIA
+          'placeholder', // Плейсхолдеры
+          'title', // Тултипы
+          'htmlFor', // Связь label с input
+          'name', // Имена полей форм
+        ],
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,
   },
+  // Исключения для определенных файлов
+  overrides: [
+    {
+      files: [
+        '**/*.test.{ts,tsx}', // Тесты
+        '**/*.stories.{ts,tsx}', // Storybook
+        '**/setupTests.ts', // Настройка тестов
+      ],
+      rules: {
+        'i18next/no-literal-string': 'off', // Отключаем правило для этих файлов
+      },
+    },
+  ],
 };
