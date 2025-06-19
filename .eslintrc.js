@@ -15,6 +15,18 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
+    'react/jsx-wrap-multilines': [
+      'error',
+      {
+        declaration: 'parens',
+        assignment: 'parens',
+        return: 'parens',
+        arrow: 'parens',
+        condition: 'parens',
+        logical: 'parens',
+        prop: 'ignore', // ← Отключаем проверку для пропсов
+      },
+    ],
     'max-len': 'off',
     'object-curly-newline': 'off',
     'react/button-has-type': 'off',
