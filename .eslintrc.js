@@ -27,6 +27,7 @@ module.exports = {
         prop: 'ignore', // ← Отключаем проверку для пропсов
       },
     ],
+    'comma-dangle': 'off',
     'max-len': 'off',
     'object-curly-newline': 'off',
     'react/button-has-type': 'off',
