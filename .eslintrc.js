@@ -68,11 +68,7 @@ module.exports = {
   // Исключения для определенных файлов
   overrides: [
     {
-      files: [
-        '**/*.test.{ts,tsx}', // Тесты
-        '**/*.stories.{ts,tsx}', // Storybook
-        '**/setupTests.ts', // Настройка тестов
-      ],
+      files: ['**/src/**/*.test.{ts,tsx}'],
       rules: {
         'i18next/no-literal-string': 'off', // Отключаем правило для этих файлов
       },

@@ -25,5 +25,6 @@
     {
       "name": "typescript-plugin-css-modules"
     }
-  ]
+  ],
+  "include": ["./config/jest/setupTests.ts"]
 }
