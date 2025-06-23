@@ -27,6 +27,8 @@ module.exports = {
         prop: 'ignore', // ← Отключаем проверку для пропсов
       },
     ],
+    'operator-linebreak': ['error', 'after'],
+    'no-unexpected-multiline': 'off',
     'comma-dangle': 'off',
     'max-len': 'off',
     'object-curly-newline': 'off',
@@ -51,6 +53,7 @@ module.exports = {
         ignoreAttribute: [
           // Атрибуты, которые можно оставить без перевода
           'data-testid', // ID для тестов
+          'to', // пропуст to
           'aria-label', // Доступность
           'alt', // Альтернативный текст
           'role', // Роли ARIA
