@@ -10,22 +10,34 @@ export default ({ config }: { config: webpack.Configuration }) => {
     entry: '',
     src: path.resolve(__dirname, '..', '..', 'src'),
   };
-  config?.resolve?.modules?.push(paths.src);
-  config?.resolve?.extensions?.push('.ts', '.tsx');
-  if (config.module) {
-    config.module.rules = config.module.rules
-      ?.filter((rule): rule is RuleSetRule => !!rule && typeof rule === 'object' && 'test' in rule)
-      ?.map((rule) => {
-        if (/svg/.test(rule.test as string)) {
-          return { ...rule, exclude: /\.svg$/i };
-        }
-        return rule;
-      });
-  }
-  config.module?.rules?.push({
-    test: /\.svg$/,
-    use: ['@svgr/webpack'],
-  });
-  config.module?.rules?.push(buildCssLoader(true));
-  return config;
+
+  // Создаем новый объект конфигурации
+  const newConfig: webpack.Configuration = {
+    ...config,
+    resolve: {
+      ...config.resolve,
+      modules: [...(config.resolve?.modules || []), paths.src],
+      extensions: [...(config.resolve?.extensions || []), '.ts', '.tsx'],
+    },
+    module: {
+      ...config.module,
+      rules: [
+        ...(config.module?.rules
+          ?.filter((rule): rule is RuleSetRule => !!rule && typeof rule === 'object' && 'test' in rule)
+          ?.map((rule) => {
+            if (/svg/.test(rule.test as string)) {
+              return { ...rule, exclude: /\.svg$/i };
+            }
+            return rule;
+          }) || []),
+        {
+          test: /\.svg$/,
+          use: ['@svgr/webpack'],
+        },
+        buildCssLoader(true),
+      ],
+    },
+  };
+
+  return newConfig;
 };
