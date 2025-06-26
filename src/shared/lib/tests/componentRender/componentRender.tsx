@@ -10,7 +10,13 @@ export interface componentRenderOptions {
 export function componentRender(component: ReactNode, options: componentRenderOptions = {}) {
   const { route = '/' } = options;
   return render(
-    <MemoryRouter initialEntries={[route]}>
+    <MemoryRouter
+      initialEntries={[route]}
+      future={{
+        v7_relativeSplatPath: true, // Флаг для относительных путей
+        v7_startTransition: true, // Флаг для startTransition
+      }}
+    >
       <I18nextProvider i18n={i18nForTest}>{component}</I18nextProvider>
     </MemoryRouter>
   );
