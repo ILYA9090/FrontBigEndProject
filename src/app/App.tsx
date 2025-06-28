@@ -4,13 +4,10 @@ import { Navbar } from 'widgets/navbar';
 import { Sidebar } from 'widgets/Sidebar';
 
 import { AppRouter } from './providers/router';
-import { useTheme } from './providers/ThemeProvider';
 
 export default function App() {
-  const { theme } = useTheme();
-
   return (
-    <div className={classNames('app', {}, [theme])}>
+    <div className={classNames('app', {}, [])}>
       <Suspense fallback="">
         <Navbar />
 
