@@ -15,6 +15,7 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
   rules: {
+    'react/prop-types': 'off',
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
