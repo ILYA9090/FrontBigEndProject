@@ -14,7 +14,8 @@
     "jest:init": "jest --init",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "storybook:build": "build-storybook -c ./config/storybook"
+    "storybook:build": "build-storybook -c ./config/storybook",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
