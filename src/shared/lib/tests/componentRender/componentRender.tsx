@@ -16,7 +16,7 @@ export function componentRender(component: ReactNode, options: componentRenderOp
 
   return render(
     <StoreProvider initialState={initialState}>
-      <MemoryRouter initialEntries={[route]}>
+      <MemoryRouter future={{ v7_relativeSplatPath: true }} initialEntries={[route]}>
         <I18nextProvider i18n={i18nForTests}>{component}</I18nextProvider>
       </MemoryRouter>
     </StoreProvider>

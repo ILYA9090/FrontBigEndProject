@@ -1,4 +1,4 @@
-import webpack, { RuleSetRule } from 'webpack';
+import webpack, { RuleSetRule, DefinePlugin } from 'webpack'; // Добавлен импорт DefinePlugin
 import path from 'path';
 import { BuildPaths } from '../build/types/config';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
@@ -16,8 +16,12 @@ export default ({ config }: { config: webpack.Configuration }) => {
     ...config,
     resolve: {
       ...config.resolve,
-      modules: [...(config.resolve?.modules || []), paths.src],
+      modules: [path.resolve(__dirname, '../../src'), 'node_modules', ...(config.resolve?.modules || [])],
       extensions: [...(config.resolve?.extensions || []), '.ts', '.tsx'],
+      alias: {
+        ...config.resolve?.alias,
+        '@': paths.src,
+      },
     },
     module: {
       ...config.module,
@@ -37,6 +41,12 @@ export default ({ config }: { config: webpack.Configuration }) => {
         buildCssLoader(true),
       ],
     },
+    plugins: [
+      ...(config.plugins || []),
+      new DefinePlugin({
+        __IS_DEV__: JSON.stringify(true), // Добавлен DefinePlugin с глобальной переменной
+      }),
+    ],
   };
 
   return newConfig;
