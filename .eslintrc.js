@@ -40,6 +40,7 @@ module.exports = {
     'operator-linebreak': ['error', 'after'],
     'no-unexpected-multiline': 'off',
     'comma-dangle': 'off',
+    'no-undef': 'off',
     'max-len': 'off',
     'object-curly-newline': 'off',
     'react/button-has-type': 'off',
@@ -82,6 +83,7 @@ module.exports = {
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true,
   },
   // Исключения для определенных файлов
   overrides: [

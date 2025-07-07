@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import React, { ReactNode, useState, useRef, useEffect, useCallback } from 'react';
 
 import cls from './Modal.module.scss';
@@ -18,7 +18,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
   const { className, children, isOpen, onClose, lazy } = props;
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const timeRef = useRef<ReturnType<typeof setTimeout>>();
+  const timeRef = useRef<ReturnType<typeof setTimeout> | undefined>();
 
   useEffect(() => {
     if (isOpen) {
@@ -57,7 +57,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
     };
   }, [isOpen, onKeyDown]);
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
   };
