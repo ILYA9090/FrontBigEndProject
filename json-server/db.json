@@ -26,13 +26,12 @@
     }
   ],
   "profile": {
+    "avatar": "https://sun9-10.userapi.com/s/v1/ig2/2aI1LsiudXedi5_5BY55tH5XHd93kAGYlCo3bgFob2Uwe1Vpz9PHxf_tHtQUXW7zgjUI3EtjnERFyN9BJNZotom1.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,853x1280&from=bu&cs=853x0",
+    "username": "admin",
+    "city": "Самара",
     "first": "Илья",
     "lastname": "Овчинников",
     "age": 24,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Samara",
-    "username": "admin",
-    "avatar": "https://sun7-21.userapi.com/s/v1/ig2/2aI1LsiudXedi5_5BY55tH5XHd93kAGYlCo3bgFob2Uwe1Vpz9PHxf_tHtQUXW7zgjUI3EtjnERFyN9BJNZotom1.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,853x1280&from=bu&cs=853x0"
+    "country": "Russia"
   }
 }
