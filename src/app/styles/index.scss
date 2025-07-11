@@ -1,9 +1,16 @@
+/* stylelint-disable-next-line string-quotes */
 @import 'reset';
+/* stylelint-disable-next-line string-quotes */
 @import 'variables/global';
+/* stylelint-disable-next-line string-quotes */
 @import 'themes/normal';
+/* stylelint-disable-next-line string-quotes */
 @import 'themes/dark';
+/* stylelint-disable-next-line string-quotes */
+@import 'themes/orange';
 
-body {
+.app,
+.app_modal {
   font: var(--font-m);
   color: var(--primary-color);
 }
