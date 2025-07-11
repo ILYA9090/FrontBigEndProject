@@ -46,6 +46,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
       new DefinePlugin({
         __IS_DEV__: JSON.stringify(true), // Добавлен DefinePlugin с глобальной переменной
         __API__: JSON.stringify(''),
+        __PROJECT__: JSON.stringify('storybook'),
       }),
     ],
   };
