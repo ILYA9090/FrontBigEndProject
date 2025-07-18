@@ -43,7 +43,7 @@ export const Input: React.FC<InputProps> = memo((props) => {
     [cls.readOnly]: readonly,
   };
   return (
-    <div className={classNames(cls.inputWrapper, mods, [className])}>
+    <div className={classNames(cls.InputWrapper, mods, [className])}>
       {placeholder && <div className={cls.placeholder}>{`${placeholder}>`}</div>}
       <div className={cls.caretWrapper}>
         <input

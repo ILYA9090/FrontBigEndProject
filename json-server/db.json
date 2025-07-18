@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "13.07.2025",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,54 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "dsaddad",
+      "id": "fL_DOZp"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "new com",
+      "id": "Jhe68R8"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "comm",
+      "id": "M73dxcB"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "dssadsada",
+      "id": "IrjBymr"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "1234",
+      "id": "1fi7-4z"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "1234",
+      "id": "-b2r0sh"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "123442",
+      "id": "X5IB1vj"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "привет Лех",
+      "id": "gL2rAps"
     }
   ],
   "users": [
@@ -118,13 +168,26 @@
       "avatar": "https://cdn.iz.ru/sites/default/files/styles/1920x1080/public/article-2019-10/3_2.jpg?itok=490tTVov"
     }
   ],
-  "profile": {
-    "avatar": "https://sun9-10.userapi.com/s/v1/ig2/2aI1LsiudXedi5_5BY55tH5XHd93kAGYlCo3bgFob2Uwe1Vpz9PHxf_tHtQUXW7zgjUI3EtjnERFyN9BJNZotom1.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,853x1280&from=bu&cs=853x0",
-    "username": "admin",
-    "city": "Самара",
-    "first": "Илья",
-    "lastname": "Овчинников",
-    "age": 24,
-    "country": "Russia"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "avatar": "https://sun9-10.userapi.com/s/v1/ig2/2aI1LsiudXedi5_5BY55tH5XHd93kAGYlCo3bgFob2Uwe1Vpz9PHxf_tHtQUXW7zgjUI3EtjnERFyN9BJNZotom1.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,853x1280&from=bu&cs=853x0",
+      "username": "admin",
+      "city": "Самара",
+      "first": "Илья",
+      "lastname": "Овчинников",
+      "age": 24,
+      "country": "Russia"
+    },
+    {
+      "id": "2",
+      "avatar": "https://i.pinimg.com/564x/e0/7f/d9/e07fd9946f01346f455cd9671b6a9036.jpg",
+      "username": "lexa",
+      "city": "Самара",
+      "first": "Алексей",
+      "lastname": "Ерофеев",
+      "age": 25,
+      "country": "Russia"
+    }
+  ]
 }
