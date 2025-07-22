@@ -27,21 +27,32 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const onLogout = useCallback(() => {
     dispatch(userActions.logout());
   }, [dispatch]);
+
   if (authData) {
     return (
-      <div className={classNames(cls.Navbar, {}, [className])}>
-        <Button onClick={onLogout} theme={ButtonTheme.CLEAR_INVERTED} className={cls.Links}>
+      <header className={classNames(cls.Navbar, {}, [className])}>
+        <Button
+          onClick={onLogout}
+          theme={ButtonTheme.CLEAR_INVERTED}
+          className={cls.Links}
+        >
           {t('Выйти')}
         </Button>
-      </div>
+      </header>
     );
   }
   return (
-    <div className={classNames(cls.Navbar, {}, [className])}>
-      <Button onClick={onShowModal} theme={ButtonTheme.CLEAR_INVERTED} className={cls.Links}>
+    <header className={classNames(cls.Navbar, {}, [className])}>
+      <Button
+        onClick={onShowModal}
+        theme={ButtonTheme.CLEAR_INVERTED}
+        className={cls.Links}
+      >
         {t('Войти')}
       </Button>
-      {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
-    </div>
+      {isAuthModal && (
+        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+      )}
+    </header>
   );
 });

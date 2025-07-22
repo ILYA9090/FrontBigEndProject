@@ -1,7 +1,10 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import React, { useCallback } from 'react';
 import { useParams } from 'react-router-dom';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
   fetchProfileData,
   ProfileCard,
@@ -22,6 +25,7 @@ import { Text, TextTheme } from 'shared/ui/Text/Text';
 
 import { useTranslation } from 'react-i18next';
 import { useInitialEffect } from 'shared/lib/Hooks/useInitialEffect/useInitialEffect';
+import { Page } from 'shared/ui/Page/Page';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -108,9 +112,16 @@ const ProfilePage: React.FC<ProfilePageProps> = (props) => {
   );
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames('', {}, [className])}>
+      <Page className={classNames('', {}, [className])}>
         <ProfilePageHeader />
-        {validateErrors?.length && validateErrors.map((err) => <Text key={err} text={validateErrorTranslates[err]} theme={TextTheme.ERROR} />)}
+        {validateErrors?.length &&
+          validateErrors.map((err) => (
+            <Text
+              key={err}
+              text={validateErrorTranslates[err]}
+              theme={TextTheme.ERROR}
+            />
+          ))}
         <ProfileCard
           readonly={readonly}
           onChangeFirstname={onChangeFirstname}
@@ -125,7 +136,7 @@ const ProfilePage: React.FC<ProfilePageProps> = (props) => {
           onChangeCurrency={onChangeCurrency}
           onChangeCountry={onChangeCountry}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };
