@@ -14,23 +14,11 @@
   "articles": [
     {
       "id": "1",
-      "title": "json-server",
-      "userId": "1"
-    },
-    {
-      "id": "2",
-      "title": "json-server",
-      "userId": "2"
-    }
-  ],
-  "articles": [
-    {
-      "id": "1",
-      "title": "Javascript news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "title": "Javascript news. Интересное",
+      "subtitle": "Что нового в JS за 2025 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 10502,
+      "createdAt": "26.03.2025",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -96,11 +84,11 @@
     },
     {
       "id": "2",
-      "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "title": "Python news за 2025",
+      "subtitle": "Что нового в python за 2025 год?",
       "img": "https://www.fullstackpython.com/img/logos/py.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 5062,
+      "createdAt": "26.02.2025",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -118,11 +106,11 @@
     },
     {
       "id": "3",
-      "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "title": "Kotlin news. Статья",
+      "subtitle": "Что нового в Kotlin за 2024 год?",
       "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 3250,
+      "createdAt": "17.05.2024",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -140,11 +128,11 @@
     },
     {
       "id": "4",
-      "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "title": "Python news. 2024",
+      "subtitle": "Что нового в JS за 2024 год?",
       "img": "https://www.fullstackpython.com/img/logos/py.png",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "11.01.2024",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -161,7 +149,7 @@
       ]
     },
     {
-      "id": "5",
+      "id": "6",
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
@@ -185,10 +173,10 @@
     {
       "id": "6",
       "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2021 год?",
       "img": "https://www.fullstackpython.com/img/logos/py.png",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2021",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -206,11 +194,11 @@
     },
     {
       "id": "7",
-      "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "title": "Kotlin news. Только самое интересное.",
+      "subtitle": "Что нового в JS за 2020 год?",
       "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 1082,
+      "createdAt": "26.02.2020",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -229,10 +217,10 @@
     {
       "id": "8",
       "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2023 год?",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK52Y062YRszSYJZ8yNxp_GVhQ-i5csVee1cfwleJ3txoBH72vOZ93BWILHtAXTAvpJHQ&usqp=CAU",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 50780,
+      "createdAt": "25.02.2023",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -250,11 +238,11 @@
     },
     {
       "id": "9",
-      "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "title": "Kotlin news. О главном",
+      "subtitle": "Что нового в JS за 2021 год?",
       "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 3050,
+      "createdAt": "26.04.2021",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -272,11 +260,11 @@
     },
     {
       "id": "10",
-      "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "title": "Python news. Только главное ",
+      "subtitle": "Что нового в JS за 2024 год?",
       "img": "https://www.fullstackpython.com/img/logos/py.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 8095,
+      "createdAt": "26.09.2024",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -295,10 +283,10 @@
     {
       "id": "11",
       "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2023 год?",
       "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 2087,
+      "createdAt": "12.05.2023",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -316,11 +304,11 @@
     },
     {
       "id": "12",
-      "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "title": "Python. Коротко о главном",
+      "subtitle": "Что интересеного произошло за 2025?",
       "img": "https://www.fullstackpython.com/img/logos/py.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 950,
+      "createdAt": "17.01.2025",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -338,11 +326,11 @@
     },
     {
       "id": "13",
-      "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "title": "Kotlin. О главном",
+      "subtitle": "Что нового в JS за 2021 год?",
       "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 8943,
+      "createdAt": "26.02.2021",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -405,10 +393,10 @@
     {
       "id": "16",
       "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2020 год?",
       "img": "https://www.fullstackpython.com/img/logos/py.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 80880,
+      "createdAt": "26.05.2020",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -426,11 +414,11 @@
     },
     {
       "id": "17",
-      "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "title": "Kotlin news. Илья Овчинников",
+      "subtitle": "Что нового в JS за 2023 год?",
       "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 11302,
+      "createdAt": "26.02.2023",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
