@@ -97,6 +97,14 @@ module.exports = {
       rules: {
         'i18next/no-literal-string': 'off', // Отключаем правило для этих файлов
         'max-len': 'off',
+        indent: [
+          'error',
+          2,
+          {
+            ignoredNodes: ['TemplateLiteral', 'JSXElement *', 'JSXElement'],
+            SwitchCase: 1,
+          },
+        ],
       },
     },
   ],

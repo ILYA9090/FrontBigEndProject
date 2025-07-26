@@ -1,4 +1,9 @@
-import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
+/* eslint-disable operator-linebreak */
+import {
+  createEntityAdapter,
+  createSlice,
+  PayloadAction,
+} from '@reduxjs/toolkit';
 
 import { Comment } from 'entities/Article/Comment';
 import { StateSchema } from 'app/providers/StoreProveder';
@@ -10,7 +15,8 @@ const commentsAdapter = createEntityAdapter<Comment>({
 });
 
 export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
-  (state) => state.articleDetailsComments || commentsAdapter.getInitialState()
+  (state) =>
+    state.articleDetailsPage?.comments || commentsAdapter.getInitialState()
 );
 
 const articleDetailsCommentsSlice = createSlice({
@@ -28,15 +34,22 @@ const articleDetailsCommentsSlice = createSlice({
         state.error = undefined;
         state.isLoading = true;
       })
-      .addCase(fetchCommentsByArticleId.fulfilled, (state, action: PayloadAction<Comment[]>) => {
-        state.isLoading = false;
-        commentsAdapter.setAll(state, action.payload);
-      })
+      .addCase(
+        fetchCommentsByArticleId.fulfilled,
+        (state, action: PayloadAction<Comment[]>) => {
+          state.isLoading = false;
+          commentsAdapter.setAll(state, action.payload);
+        }
+      )
       .addCase(fetchCommentsByArticleId.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = typeof action.payload === 'string' ? action.payload : 'Неизвестная ошибка';
+        state.error =
+          typeof action.payload === 'string'
+            ? action.payload
+            : 'Неизвестная ошибка';
       });
   },
 });
 
-export const { reducer: articleDetailsCommentsReducer } = articleDetailsCommentsSlice;
+export const { reducer: articleDetailsCommentsReducer } =
+  articleDetailsCommentsSlice;

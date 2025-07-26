@@ -23,3 +23,23 @@
 .content-page {
   display: flex;
 }
+
+*::-webkit-scrollbar {
+  width: 12px; /* ширина вертикального скроллбара */
+  height: 10px; /* высота горизонтального скроллбара */
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--card-bg); /* цвет фона трека */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--inverted-primary-color); /* цвет ползунка */
+  border-radius: 5px;
+  border: 2px solid var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* цвет ползунка при наведении */
+}
