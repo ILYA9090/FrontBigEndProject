@@ -4,6 +4,7 @@ import cls from './Text.module.scss';
 
 export enum TextTheme {
   PRIMARY = 'primary',
+  INVERTED = 'inverted',
   ERROR = 'error',
 }
 
@@ -28,7 +29,14 @@ interface TextProps {
 }
 
 export const Text: React.FC<TextProps> = memo((props) => {
-  const { className, title, text, size = TextSize.M, theme = TextTheme.PRIMARY, align = TextAlign.LEFT } = props;
+  const {
+    className,
+    title,
+    text,
+    size = TextSize.M,
+    theme = TextTheme.PRIMARY,
+    align = TextAlign.LEFT,
+  } = props;
 
   const mods: Mods = {
     [cls[theme]]: true,

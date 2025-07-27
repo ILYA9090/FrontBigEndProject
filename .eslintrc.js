@@ -37,7 +37,7 @@ module.exports = {
         prop: 'ignore', // ← Отключаем проверку для пропсов
       },
     ],
-    'operator-linebreak': ['error', 'after'],
+    'operator-linebreak': 'off',
     'no-unexpected-multiline': 'off',
     'comma-dangle': 'off',
     'no-undef': 'off',
@@ -62,7 +62,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     // Правило для запрета литеральных строк
     'i18next/no-literal-string': [
-      'error', // Уровень ошибки
+      'warn', // Уровень ошибки
       {
         markupOnly: true, // Проверять только JSX-разметку
         ignoreAttribute: [
