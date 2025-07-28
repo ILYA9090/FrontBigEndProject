@@ -13,7 +13,13 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'i18next',
+    'react-hooks',
+    'ilya-ov-plugin',
+  ],
   rules: {
     'react/prop-types': 'off',
     '@typescript-eslint/no-unused-vars': [
@@ -84,6 +90,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
     'no-param-reassign': 'off',
+    'ilya-ov-plugin/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,
