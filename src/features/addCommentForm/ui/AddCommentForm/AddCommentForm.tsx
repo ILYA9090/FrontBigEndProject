@@ -2,12 +2,19 @@
 import { FC, memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/Hooks/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 
-import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/addCommentFormSlice';
+import { HStack } from 'shared/ui/Stack';
+import {
+  addCommentFormActions,
+  addCommentFormReducer,
+} from '../../model/slices/addCommentFormSlice';
 import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
 import cls from './AddCommentForm.module.scss';
 
@@ -34,14 +41,24 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((props) => {
     onSendComment(text || '');
     onCommentTextChange('');
   }, [onCommentTextChange, onSendComment, text]);
+
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.addCommentForm, {}, [className])}>
-        <Input className={cls.input} onChange={onCommentTextChange} value={text} placeholder="Введите текст комментария" />
+      <HStack
+        justify="between"
+        max
+        className={classNames(cls.addCommentForm, {}, [className])}
+      >
+        <Input
+          className={cls.input}
+          onChange={onCommentTextChange}
+          value={text}
+          placeholder="Введите текст комментария"
+        />
         <Button onClick={onSendHandler} theme={ButtonTheme.OUTLINE}>
           Отправить
         </Button>
-      </div>
+      </HStack>
     </DynamicModuleLoader>
   );
 });

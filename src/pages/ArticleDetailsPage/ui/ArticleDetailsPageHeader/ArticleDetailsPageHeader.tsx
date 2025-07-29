@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routerConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { HStack } from 'shared/ui/Stack';
 import { getCanEditArticle } from '../../model/selectors/article';
-import cls from './ArticleDetailsPageHeader.module.scss';
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;
@@ -29,22 +29,16 @@ export const ArticleDetailsPageHeader: FC<ArticleDetailsPageHeaderProps> = memo(
     }, [navigate, article?.id]);
 
     return (
-      <div
-        className={classNames(cls.articleDetailsPageHeader, {}, [className])}
-      >
+      <HStack max justify="between" className={classNames('', {}, [className])}>
         <Button onClick={onBackToList} theme={ButtonTheme.OUTLINE}>
           {t('Назад к списку')}
         </Button>
         {canEdit && (
-          <Button
-            className={cls.editBtn}
-            onClick={onEditArticle}
-            theme={ButtonTheme.OUTLINE}
-          >
+          <Button onClick={onEditArticle} theme={ButtonTheme.OUTLINE}>
             {t('Редактировать статью')}
           </Button>
         )}
-      </div>
+      </HStack>
     );
   }
 );

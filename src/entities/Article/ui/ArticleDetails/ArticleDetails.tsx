@@ -15,6 +15,7 @@ import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { useInitialEffect } from 'shared/lib/Hooks/useInitialEffect/useInitialEffect';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
@@ -109,34 +110,39 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
   } else {
     content = (
       <>
-        <div className={cls.avatarWrapper}>
+        <HStack justify="center" max>
           <Avatar size={200} src={article?.img} className={cls.avatar} />
-        </div>
-        <Text
-          className={cls.title}
-          title={article?.title}
-          text={article?.subtitle}
-          size={TextSize.L}
-        />
-        <div className={cls.articleInfo}>
-          <Icon className={cls.icon} Svg={EyeIcon} />
+        </HStack>
+        <VStack gap="4" max>
+          <Text
+            title={article?.title}
+            text={article?.subtitle}
+            size={TextSize.L}
+          />
+          <HStack gap="8" className={cls.articleInfo}>
+            <Icon Svg={EyeIcon} />
 
-          <Text text={String(article?.views)} />
-        </div>
-        <div className={cls.articleInfo}>
-          <Icon className={cls.icon} Svg={CalendarIcon} />
+            <Text text={String(article?.views)} />
+          </HStack>
+          <HStack gap="8" className={cls.articleInfo}>
+            <Icon Svg={CalendarIcon} />
 
-          <Text text={String(article?.createdAt)} />
-        </div>
+            <Text text={String(article?.createdAt)} />
+          </HStack>
+        </VStack>
+
         {article?.blocks.map(renderBlock)}
       </>
     );
   }
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.ArticleDetails, {}, [className])}>
+      <VStack
+        gap="16"
+        className={classNames(cls.ArticleDetails, {}, [className])}
+      >
         {content}
-      </div>
+      </VStack>
     </DynamicModuleLoader>
   );
 });

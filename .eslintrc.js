@@ -74,6 +74,11 @@ module.exports = {
         ignoreAttribute: [
           // Атрибуты, которые можно оставить без перевода
           'data-testid', // ID для тестов
+          'direction',
+          'role',
+          'gap',
+          'justify',
+          'align',
           'to', // пропуст to
           'aria-label', // Доступность
           'alt', // Альтернативный текст

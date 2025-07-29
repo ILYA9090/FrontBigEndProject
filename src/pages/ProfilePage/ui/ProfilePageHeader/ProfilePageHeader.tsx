@@ -3,11 +3,16 @@ import { Text } from 'shared/ui/Text/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getProfileData, getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
+import {
+  getProfileData,
+  getProfileReadonly,
+  profileActions,
+  updateProfileData,
+} from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/Hooks/useAppDispatch';
 import { useCallback } from 'react';
 import { getUserAuthData } from 'entities/User';
-import cls from './ProfilePageHeader.module.scss';
+import { HStack } from 'shared/ui/Stack';
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -35,26 +40,26 @@ export const ProfilePageHeader: React.FC<ProfilePageHeaderProps> = (props) => {
     dispatch(updateProfileData());
   }, [dispatch]);
   return (
-    <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+    <HStack max justify="between" className={classNames('', {}, [className])}>
       <Text title={t('Профиль пользователя')} />
       {canEdit && (
-        <div className={cls.btnWrapper}>
+        <div>
           {readonly ? (
-            <Button onClick={onEdit} theme={ButtonTheme.OUTLINE} className={cls.editBtn}>
+            <Button onClick={onEdit} theme={ButtonTheme.OUTLINE}>
               {t('Редактировать')}
             </Button>
           ) : (
-            <>
-              <Button onClick={onCancelEdit} theme={ButtonTheme.OUTLINE_RED} className={cls.editBtn}>
+            <HStack gap="8">
+              <Button onClick={onCancelEdit} theme={ButtonTheme.OUTLINE_RED}>
                 {t('Отменить')}
               </Button>
-              <Button onClick={onSave} theme={ButtonTheme.OUTLINE} className={cls.saveBtn}>
+              <Button onClick={onSave} theme={ButtonTheme.OUTLINE}>
                 {t('Сохранить')}
               </Button>
-            </>
+            </HStack>
           )}
         </div>
       )}
-    </div>
+    </HStack>
   );
 };
