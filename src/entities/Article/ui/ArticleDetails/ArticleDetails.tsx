@@ -3,7 +3,10 @@ import { FC, memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/Hooks/useAppDispatch';
 import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
@@ -11,11 +14,15 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
-import { ArticleBlock, ArticleBlockType } from 'entities/Article/model/types/article';
 import { useInitialEffect } from 'shared/lib/Hooks/useInitialEffect/useInitialEffect';
+import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from '../../model/selectors/getArticleDetails';
+import {
+  getArticleDetailsData,
+  getArticleDetailsError,
+  getArticleDetailsIsLoading,
+} from '../../model/selectors/getArticleDetails';
 import cls from './ArticleDetails.module.scss';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
@@ -42,11 +49,29 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
       case ArticleBlockType.CODE:
-        return <ArticleCodeBlockComponent key={block.id} block={block} className={cls.block} />;
+        return (
+          <ArticleCodeBlockComponent
+            key={block.id}
+            block={block}
+            className={cls.block}
+          />
+        );
       case ArticleBlockType.IMAGE:
-        return <ArticleImageBlockComponent key={block.id} block={block} className={cls.block} />;
+        return (
+          <ArticleImageBlockComponent
+            key={block.id}
+            block={block}
+            className={cls.block}
+          />
+        );
       case ArticleBlockType.TEXT:
-        return <ArticleTextBlockComponent key={block.id} block={block} className={cls.block} />;
+        return (
+          <ArticleTextBlockComponent
+            key={block.id}
+            block={block}
+            className={cls.block}
+          />
+        );
       default:
         return null;
     }
@@ -61,7 +86,12 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
   if (isLoading) {
     content = (
       <>
-        <Skeleton className={cls.avatar} width={200} height={200} border="50%" />
+        <Skeleton
+          className={cls.avatar}
+          width={200}
+          height={200}
+          border="50%"
+        />
 
         <Skeleton className={cls.title} width={600} height={24} />
         <Skeleton className={cls.skeleton} width={300} height={32} />
@@ -70,14 +100,24 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
       </>
     );
   } else if (error) {
-    content = <Text align={TextAlign.CENTER} title={t('Произошла ошибка при загрузке статьи')} />;
+    content = (
+      <Text
+        align={TextAlign.CENTER}
+        title={t('Произошла ошибка при загрузке статьи')}
+      />
+    );
   } else {
     content = (
       <>
         <div className={cls.avatarWrapper}>
           <Avatar size={200} src={article?.img} className={cls.avatar} />
         </div>
-        <Text className={cls.title} title={article?.title} text={article?.subtitle} size={TextSize.L} />
+        <Text
+          className={cls.title}
+          title={article?.title}
+          text={article?.subtitle}
+          size={TextSize.L}
+        />
         <div className={cls.articleInfo}>
           <Icon className={cls.icon} Svg={EyeIcon} />
 
@@ -94,7 +134,9 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
   }
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.ArticleDetails, {}, [className])}>{content}</div>
+      <div className={classNames(cls.ArticleDetails, {}, [className])}>
+        {content}
+      </div>
     </DynamicModuleLoader>
   );
 });

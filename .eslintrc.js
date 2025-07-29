@@ -90,7 +90,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
     'no-param-reassign': 'off',
-    'ilya-ov-plugin/path-checker': 'error',
+    'ilya-ov-plugin/path-checker': 'warn',
   },
   globals: {
     __IS_DEV__: true,

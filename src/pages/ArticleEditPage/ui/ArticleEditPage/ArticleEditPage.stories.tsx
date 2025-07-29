@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ArticleEditPage } from 'pages/ArticleEditPage';
+import ArticleEditPage from './ArticleEditPage';
 
 export default {
   title: 'shared/ArticleEditPage',
