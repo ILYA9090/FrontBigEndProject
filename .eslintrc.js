@@ -75,6 +75,7 @@ module.exports = {
           // Атрибуты, которые можно оставить без перевода
           'data-testid', // ID для тестов
           'direction',
+          'as',
           'role',
           'gap',
           'justify',
