@@ -37,7 +37,7 @@ export const CountrySelect: React.FC<CurrensySelectProps> = memo((props) => {
       value={value}
       onChange={onChangeHandler}
       defaultValue={t('Укажите страну')}
-      direction="top"
+      direction="top right"
     />
   );
 });

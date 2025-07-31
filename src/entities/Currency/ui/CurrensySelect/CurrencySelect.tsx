@@ -36,7 +36,7 @@ export const CurrencySelect: React.FC<CurrensySelectProps> = memo((props) => {
       onChange={onChangeHandler}
       items={options}
       defaultValue={t('Укажите валюту')}
-      direction="top"
+      direction="top right"
     />
   );
 });
