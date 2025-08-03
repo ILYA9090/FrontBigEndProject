@@ -1,7 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Profile } from 'entities/Profile';
+import {
+  ProfileSchema,
+  ValidateProfileError,
+} from '../types/editableProfileCardSchema';
 import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
-import { Profile, ProfileSchema, ValidateProfileError } from '../types/profile';
 
 const initialState: ProfileSchema = {
   readonly: true,
@@ -35,26 +39,35 @@ export const profileSlice = createSlice({
         state.error = undefined;
         state.isLoading = true;
       })
-      .addCase(fetchProfileData.fulfilled, (state, action: PayloadAction<Profile>) => {
-        state.isLoading = false;
-        state.data = action.payload;
-        state.form = action.payload;
-      })
+      .addCase(
+        fetchProfileData.fulfilled,
+        (state, action: PayloadAction<Profile>) => {
+          state.isLoading = false;
+          state.data = action.payload;
+          state.form = action.payload;
+        }
+      )
       .addCase(fetchProfileData.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = typeof action.payload === 'string' ? action.payload : 'Неизвестная ошибка';
+        state.error =
+          typeof action.payload === 'string'
+            ? action.payload
+            : 'Неизвестная ошибка';
       })
       .addCase(updateProfileData.pending, (state) => {
         state.validateErrors = undefined;
         state.isLoading = true;
       })
-      .addCase(updateProfileData.fulfilled, (state, action: PayloadAction<Profile>) => {
-        state.isLoading = false;
-        state.data = action.payload;
-        state.form = action.payload;
-        state.readonly = true;
-        state.validateErrors = undefined;
-      })
+      .addCase(
+        updateProfileData.fulfilled,
+        (state, action: PayloadAction<Profile>) => {
+          state.isLoading = false;
+          state.data = action.payload;
+          state.form = action.payload;
+          state.readonly = true;
+          state.validateErrors = undefined;
+        }
+      )
       .addCase(updateProfileData.rejected, (state, action) => {
         state.isLoading = false;
         state.validateErrors = action.payload as ValidateProfileError[];

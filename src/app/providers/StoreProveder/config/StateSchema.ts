@@ -8,18 +8,20 @@ import {
   AnyAction,
   CombinedState,
 } from '@reduxjs/toolkit';
-import { ProfileSchema } from 'entities/Profile';
+import { ProfileSchema } from 'features/editableProfileCard';
 import { AxiosInstance } from 'axios';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { articlePageSchema } from 'pages/ArticlesPage';
 import { ScrollSafeSchema } from 'features/scrollSafe';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
   scrollSafe: ScrollSafeSchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
   // асинхронные редьюсеры
   loginForm?: LoginSchema;
   profile?: ProfileSchema;
