@@ -16,7 +16,7 @@ export const ArticleRecommendationsList: FC<ArticleRecommendationsListProps> =
   memo((props) => {
     const { className } = props;
     const { t } = useTranslation();
-    const { data: articles = [], isLoading } = useArticleRecommendationsList(3);
+    const { data: articles, isLoading } = useArticleRecommendationsList(3);
 
     if (isLoading) {
       return (
@@ -28,7 +28,11 @@ export const ArticleRecommendationsList: FC<ArticleRecommendationsListProps> =
     return (
       <VStack gap="8" className={classNames('', {}, [className])}>
         <Text size={TextSize.L} title={t('Рекомендуем')} />
-        <ArticleList articles={articles} target="_blank" />
+        <ArticleList
+          articles={articles || []}
+          target="_blank"
+          virtualized={false}
+        />
       </VStack>
     );
   });

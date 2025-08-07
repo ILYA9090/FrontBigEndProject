@@ -20,6 +20,7 @@ export const ArticleDetailsPageHeader: FC<ArticleDetailsPageHeaderProps> = memo(
     const navigate = useNavigate();
     const canEdit = useSelector(getCanEditArticle);
     const article = useSelector(getArticleDetailsData);
+
     const onBackToList = useCallback(() => {
       navigate(RoutePath.articles);
     }, [navigate]);

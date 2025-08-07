@@ -22,6 +22,7 @@ module.exports = {
   ],
   rules: {
     'react/prop-types': 'off',
+    'function-paren-newline': 'off',
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
