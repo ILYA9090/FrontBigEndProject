@@ -75,6 +75,7 @@ export const ArticleList: FC<ArticleListProps> = memo((props) => {
     );
   }
   return (
+    // @ts-ignore
     <WindowScroller scrollElement={document.getElementById(PAGE_ID) as Element}>
       {({
         height,
@@ -85,10 +86,12 @@ export const ArticleList: FC<ArticleListProps> = memo((props) => {
         scrollTop,
       }) => (
         <div
+          // @ts-ignore
           ref={registerChild}
           className={classNames(cls.articleList, {}, [className, cls[view]])}
         >
           {virtualized ? (
+            // @ts-ignore
             <List
               autoHeight
               height={height ?? 700}
