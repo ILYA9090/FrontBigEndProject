@@ -10,12 +10,8 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 
 import { RoutePath } from 'shared/config/routerConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
-import {
-  Article,
-  ArticleBlockType,
-  ArticleTextBlock,
-  ArticleView,
-} from '../../model/types/article';
+import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
+import { Article, ArticleTextBlock } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
