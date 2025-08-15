@@ -79,6 +79,7 @@ module.exports = {
           'target',
           'as',
           'role',
+          'border',
           'gap',
           'justify',
           'align',
