@@ -13,7 +13,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/Hooks/useAppDispatch';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { MenuComponent } from 'shared/ui/Popups';
-import cls from './AvatarDropdown.module.scss';
 
 interface AvatarDropdownProps {
   className?: string;
@@ -37,7 +36,7 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo((props) => {
   }
   return (
     <MenuComponent
-      className={classNames(cls.avatarDropdown, {}, [className])}
+      className={classNames('', {}, [className])}
       direction="bottom left"
       items={[
         ...(isAdminPanelAvailable

@@ -1,3 +1,4 @@
+// import { getUserInited, userActions } from 'entities/User';
 import { getUserInited, userActions } from 'entities/User';
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
