@@ -4,6 +4,9 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import svgr from 'vite-plugin-svgr';
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    open: true, // автоматически открывать браузер
+  },
   optimizeDeps: {
     include: ['react-virtualized'],
     exclude: ['react-virtualized'],
