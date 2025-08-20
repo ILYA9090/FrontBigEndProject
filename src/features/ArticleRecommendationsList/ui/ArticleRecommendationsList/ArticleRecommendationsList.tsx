@@ -16,7 +16,7 @@ export const ArticleRecommendationsList: FC<ArticleRecommendationsListProps> =
   memo((props) => {
     const { className } = props;
     const { t } = useTranslation();
-    const { data: articles, isLoading } = useArticleRecommendationsList(3);
+    const { data: articles, isLoading } = useArticleRecommendationsList(4);
 
     if (isLoading) {
       return (
