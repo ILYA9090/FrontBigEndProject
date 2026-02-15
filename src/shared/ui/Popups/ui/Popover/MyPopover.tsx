@@ -23,7 +23,9 @@ export const MyPopover: FC<PopoverProps> = memo((props) => {
     <Popover
       className={classNames(cls.MyPopover, {}, [className, popupCls.popup])}
     >
-      <Popover.Button className={popupCls.trigger}>{trigger}</Popover.Button>
+      <Popover.Button as="div" className={popupCls.trigger}>
+        {trigger}
+      </Popover.Button>
       <Popover.Panel className={classNames(cls.panel, {}, menuClasses)}>
         {children}
       </Popover.Panel>
