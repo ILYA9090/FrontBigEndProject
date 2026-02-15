@@ -26,7 +26,15 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: React.FC<ButtonProps> = memo((props) => {
-  const { className, children, theme = ButtonTheme.OUTLINE, square, disabled, size = ButtonSize.M, ...otherProps } = props;
+  const {
+    className,
+    children,
+    theme = ButtonTheme.OUTLINE,
+    square,
+    disabled,
+    size = ButtonSize.M,
+    ...otherProps
+  } = props;
 
   const mods: Mods = {
     [cls[theme]]: true,
@@ -35,7 +43,11 @@ export const Button: React.FC<ButtonProps> = memo((props) => {
     [cls.disabled]: disabled,
   };
   return (
-    <button disabled={disabled} className={classNames(cls.Button, mods, [className])} {...otherProps}>
+    <button
+      disabled={disabled}
+      className={classNames(cls.Button, mods, [className])}
+      {...otherProps}
+    >
       {children}
     </button>
   );

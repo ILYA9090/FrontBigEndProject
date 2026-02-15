@@ -1,6 +1,5 @@
 import { Menu } from '@headlessui/react';
-import { Fragment, ReactNode } from 'react';
-
+import { Fragment, ReactNode, useId } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DropDownDirection } from 'shared/types/ui';
 import { AppLink } from '../../../AppLink/AppLink';
@@ -24,7 +23,7 @@ interface MenuComponentProps {
 
 export function MenuComponent(props: MenuComponentProps) {
   const { className, items, trigger, direction = 'bottom right' } = props;
-
+  const id = useId();
   const menuClasses = [mapDirectionClass[direction]];
 
   return (
@@ -51,13 +50,22 @@ export function MenuComponent(props: MenuComponentProps) {
           );
           if (item.href) {
             return (
-              <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+              <Menu.Item
+                key={`menu-item${id}`}
+                as={AppLink}
+                to={item.href}
+                disabled={item.disabled}
+              >
                 {content}
               </Menu.Item>
             );
           }
           return (
-            <Menu.Item as={Fragment} disabled={item.disabled}>
+            <Menu.Item
+              key={`menu-item${id}`}
+              as={Fragment}
+              disabled={item.disabled}
+            >
               {content}
             </Menu.Item>
           );
