@@ -8,8 +8,8 @@ import { Card } from 'shared/ui/Card/Card';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 
-import { RoutePath } from 'shared/config/routerConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/types/router';
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import { Article, ArticleTextBlock } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';

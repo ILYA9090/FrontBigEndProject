@@ -8,9 +8,10 @@ import {
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { RoutePath } from 'shared/config/routerConfig/routeConfig';
+
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/Hooks/useAppDispatch';
+import { RoutePath } from 'shared/types/router';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { MenuComponent } from 'shared/ui/Popups';
 
