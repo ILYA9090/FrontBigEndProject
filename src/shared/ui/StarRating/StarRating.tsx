@@ -18,8 +18,8 @@ const stars = [1, 2, 3, 4, 5];
 export const StarRating: FC<StarRatingProps> = memo((props) => {
   const { className, size = 30, selectedStars = 0, onSelect } = props;
   // const { t } = useTranslation();
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-  const [currentStarsCount, setCurrentStarsCount] = useState<number>(0);
+  const [currentStarsCount, setCurrentStarsCount] =
+    useState<number>(selectedStars);
   const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
   // const mods: Mods = {
   //   [cls.hovered]: isHovered,
