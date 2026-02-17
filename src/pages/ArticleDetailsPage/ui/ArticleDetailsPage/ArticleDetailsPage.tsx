@@ -11,7 +11,7 @@ import {
 
 import { Page } from 'widgets/Page/Page';
 import { VStack } from 'shared/ui/Stack';
-
+import { ArticleRating } from 'features/articleRating';
 import { ArticleRecommendationsList } from 'features/ArticleRecommendationsList';
 import { articleDetailsPageReducer } from '../../model/slices';
 
@@ -30,12 +30,17 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
   const { id } = useParams<{ id: string }>();
 
+  if (!id) {
+    return null;
+  }
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
         <VStack gap="16" max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
+          <ArticleRating articleId={id} />
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>

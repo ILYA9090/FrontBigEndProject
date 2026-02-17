@@ -622,5 +622,51 @@
       "age": 25,
       "country": "Russia"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": 1,
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": 1,
+      "articleId": 1
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 3,
+      "feedback": "",
+      "id": 2
+    },
+    {
+      "userId": "1",
+      "articleId": "13",
+      "rate": 5,
+      "feedback": "",
+      "id": 3
+    },
+    {
+      "userId": "1",
+      "articleId": "15",
+      "rate": 5,
+      "feedback": "",
+      "id": 4
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": 1,
+      "rate": 4,
+      "feedback": "Норм профиль",
+      "userId": 1,
+      "profileId": 1
+    },
+    {
+      "userId": "1",
+      "profileId": "2",
+      "rate": 5,
+      "feedback": "",
+      "id": 2
+    }
   ]
 }
