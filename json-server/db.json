@@ -651,6 +651,13 @@
       "rate": 5,
       "feedback": "",
       "id": 4
+    },
+    {
+      "userId": "1",
+      "articleId": "11",
+      "rate": 4,
+      "feedback": "",
+      "id": 5
     }
   ],
   "profile-ratings": [
