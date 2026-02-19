@@ -10,6 +10,8 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/types/router';
+import { AppImage } from 'shared/ui/AppImage';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import { Article, ArticleTextBlock } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
@@ -41,7 +43,12 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
           </div>
           <Text title={article.title} className={cls.title} />
           <Text text={article.type.join(', ')} className={cls.types} />
-          <img src={article.img} className={cls.img} alt={article.title} />
+          <AppImage
+            fallback={<Skeleton width="100%" height={250} />}
+            src={article.img}
+            className={cls.img}
+            alt={article.title}
+          />
           {textBlock && (
             <ArticleTextBlockComponent
               block={textBlock}
@@ -71,7 +78,12 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
     >
       <Card className={cls.card}>
         <div className={cls.imageWrapper}>
-          <img src={article.img} className={cls.img} alt={article.title} />
+          <AppImage
+            fallback={<Skeleton width={200} height={200} />}
+            src={article.img}
+            className={cls.img}
+            alt={article.title}
+          />
           <Text text={article.createdAt} className={cls.date} />
         </div>
         <div className={cls.infoWrapper}>
