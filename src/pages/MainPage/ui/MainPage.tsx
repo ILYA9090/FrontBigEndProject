@@ -6,9 +6,9 @@ const MainPage = memo(() => {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div data-testid="MainPage">
       {t('Главная страница')}
-      <Rating title="привет" />
+      <Rating title="Оцени сайт " />
     </div>
   );
 });
