@@ -22,7 +22,7 @@ const ProfilePage: React.FC<ProfilePageProps> = (props) => {
     return <Text title={t('Профиль не найден')} />;
   }
   return (
-    <Page className={classNames('', {}, [className])}>
+    <Page data-testid="ProfilePage" className={classNames('', {}, [className])}>
       <VStack gap="16" max>
         <EditableProfileCard id={id} />
         <ProfileRating profileId={id} />

@@ -14,11 +14,12 @@ interface PageProps {
   className?: string;
   children: ReactNode;
   onScrollEnd?: () => void;
+  'data-testid'?: string;
 }
 export const PAGE_ID = 'PAGE_ID';
 
 export const Page: FC<PageProps> = (props) => {
-  const { className, children, onScrollEnd } = props;
+  const { className, children, onScrollEnd, 'data-testid': dataTestId } = props;
   const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
   const dispatch = useAppDispatch();
@@ -52,6 +53,7 @@ export const Page: FC<PageProps> = (props) => {
       ref={wrapperRef}
       className={classNames(cls.page, {}, [className])}
       id={PAGE_ID}
+      data-testid={dataTestId ?? 'page'}
     >
       {children}
       {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
