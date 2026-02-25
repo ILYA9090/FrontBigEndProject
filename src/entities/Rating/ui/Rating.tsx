@@ -62,7 +62,11 @@ export const Rating: FC<RatingProps> = memo((props) => {
   const modalContent = (
     <VStack max gap="32">
       <Text title={feedBackTitle} />
-      <Input placeholder={t('Ваш отзыв')} />
+      <Input
+        placeholder={t('Ваш отзыв')}
+        value={feedBack}
+        onChange={setFeedBack}
+      />
       <HStack max gap="16" justify="end">
         <Button onClick={canceleHandle} theme={ButtonTheme.OUTLINE_RED}>
           {t('Закрыть')}
