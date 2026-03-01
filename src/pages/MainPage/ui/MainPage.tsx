@@ -8,7 +8,7 @@ const MainPage = memo(() => {
   return (
     <div data-testid="MainPage">
       {t('Главная страница')}
-      <Rating title="Оцени сайт " />
+      <Rating title="Оцени сайт" />
     </div>
   );
 });

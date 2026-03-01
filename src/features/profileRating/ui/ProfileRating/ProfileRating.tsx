@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import { FC, memo, useCallback } from 'react';
 import { Rating } from 'entities/Rating';
 import { useTranslation } from 'react-i18next';
@@ -61,13 +62,20 @@ export const ProfileRating: FC<ProfileRatingProps> = memo((props) => {
   if (!profileId) {
     return null;
   }
-
   return (
     <Rating
       onAccept={onAccept}
       onCancel={onCancel}
       rate={rating?.rate}
-      title={rating?.rate ? t('Ваша оценка профиля') : t('Оцените профиль')}
+      title={
+        rating?.rate
+          ? t(
+              rating.feedback
+                ? `Ваша оценка профиля :  ${rating.feedback}`
+                : 'Ваша оценка профиля'
+            )
+          : t('Оцените профиль')
+      }
       feedBackTitle={t('Оставьте ваш отзыв о профиле')}
       hasFeedback
     />

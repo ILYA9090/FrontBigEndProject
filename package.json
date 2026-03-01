@@ -16,6 +16,7 @@
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "jest:init": "jest --init",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
+    "test:e2e": "cypress open",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook",
     "prepare": "husky"
@@ -60,6 +61,7 @@
     "babel-plugin-i18next-extract": "^0.8.3",
     "circular-dependency-plugin": "^5.2.2",
     "css-loader": "^6.6.0",
+    "cypress": "^15.11.0",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-i18next": "^5.1.2",
