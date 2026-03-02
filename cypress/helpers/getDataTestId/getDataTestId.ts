@@ -1,2 +1,2 @@
 export const getDataTestId = (dataTestId: string) =>
-  `[data-testid=${dataTestId}]`;
+  `[data-testid="${dataTestId}"]`;

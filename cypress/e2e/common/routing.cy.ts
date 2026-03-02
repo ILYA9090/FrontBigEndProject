@@ -7,12 +7,12 @@ describe('роутинг', () => {
       cy.get(getDataTestId('MainPage')).should('exist');
     });
   });
-  describe('не авторизован', () => {
+  describe('пользователь не авторизован', () => {
     it('Переход на main page', () => {
       cy.visit('/');
       cy.get(getDataTestId('MainPage')).should('exist');
     });
-    it('переход открывается profile page', () => {
+    it('переход на профиль открывает главную', () => {
       cy.visit('/profile/1');
       cy.get('[data-testid=MainPage]').should('exist');
     });

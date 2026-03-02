@@ -564,7 +564,7 @@
       "username": "testuser",
       "password": "123",
       "role": ["USER"],
-      "avatar": "https://cdn.iz.ru/sites/default/files/styles/1920x1080/public/article-2019-10/3_2.jpg?itok=490tTVov"
+      "avatar": ""
     }
   ],
   "profile": [
@@ -586,6 +586,16 @@
       "city": "Самара",
       "first": "Алексей",
       "lastname": "Ерофеев",
+      "age": 25,
+      "country": "Russia"
+    },
+    {
+      "id": "4",
+      "avatar": "",
+      "username": "testuser",
+      "city": "Самара",
+      "first": "test",
+      "lastname": "user",
       "age": 25,
       "country": "Russia"
     }
@@ -648,6 +658,13 @@
       "rate": 5,
       "feedback": "",
       "id": 2
+    },
+    {
+      "userId": "4",
+      "profileId": "4",
+      "rate": 3,
+      "feedback": "",
+      "id": 3
     }
   ]
 }
