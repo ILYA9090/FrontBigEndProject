@@ -7,4 +7,11 @@ export default defineConfig({
     },
     baseUrl: 'http://localhost:3001/',
   },
+
+  component: {
+    devServer: {
+      framework: 'react',
+      bundler: 'webpack',
+    },
+  },
 });
