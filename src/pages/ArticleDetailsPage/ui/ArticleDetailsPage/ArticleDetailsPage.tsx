@@ -13,7 +13,9 @@ import { Page } from 'widgets/Page/Page';
 import { VStack } from 'shared/ui/Stack';
 import { ArticleRating } from 'features/articleRating';
 import { ArticleRecommendationsList } from 'features/ArticleRecommendationsList';
-import { getFeatureFlag } from 'shared/lib/features';
+import { toogleFeatures } from 'shared/lib/features';
+import { Card } from 'shared/ui/Card/Card';
+
 import { articleDetailsPageReducer } from '../../model/slices';
 
 import cls from './ArticleDetailsPage.module.scss';
@@ -27,9 +29,17 @@ interface ArticleDetailsPageProps {
 const reducers: ReducersList = {
   articleDetailsPage: articleDetailsPageReducer,
 };
+
+const ArticleRatingToggle = ({ articleId }: { articleId: string }) =>
+  toogleFeatures({
+    name: 'isArticleRatingEnabled',
+    on: () => <ArticleRating articleId={articleId} />,
+    off: () => <Card>Оценка статей скоро появится</Card>,
+  });
+
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   const { className } = props;
-  const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
+  // const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
   const { id } = useParams<{ id: string }>();
   if (!id) {
     return null;
@@ -41,7 +51,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         <VStack gap="16" max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          {isArticleRatingEnabled && <ArticleRating articleId={id} />}
+          <ArticleRatingToggle articleId={id} />
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>
