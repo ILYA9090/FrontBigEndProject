@@ -9,4 +9,4 @@ export {
   isUserAdmin,
   isUserManager,
 } from './model/selectors/rolesSelectors';
-export { useJsonSettingsByKey } from './model/selectors/jsonSettings';
+export { saveJsonSettings } from './model/services/saveJsonSettings';
